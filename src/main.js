@@ -1,18 +1,30 @@
+// const log = Vue.createApp({
+//     data: function() {
+//         return {
+//             message: 'Hello World',
+//         }
+//     },
+//     render() {
+//         return Vue.h('div', [
+//             Vue.h('div', this.message),
+//             Vue.h('div', this.message)
+//         ]);
+//     }
+// });
+
 const app = Vue.createApp({
     data: function() {
         return {
             counter: 0,
             timer: null,
-            message: '',
         }
     },
     methods: {
         addMessage: function(message) {
             const messageElm = document.createElement('div');
             const now = new Date().toLocaleTimeString();
-            logElm = document.getElementById('log');
             messageElm.innerText = now + ' ' + message;
-            logElm.appendChild(messageElm);
+            this.$refs.log.appendChild(messageElm);
         },
         startButton: function() {
             let seconds = 0;
@@ -38,4 +50,5 @@ const app = Vue.createApp({
         }
     }
 });
-app.mount('#app')
+app.mount('#app');
+// log.mount('#log');
