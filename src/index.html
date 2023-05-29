@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/output.css" rel="stylesheet">
+  <title>ストップウオッチアプリ</title>
+</head>
+<body>
+  <div id="app">
+    <h1 class="text-center font-bold text-3xl tracking-wider my-8">ストップウオッチ</h1>
+    <div class="mx-auto w-60  ">
+      <div class="font-bold text-right h-auto mb-4 p-2 text-blue-300 bg-black">
+        {{ counter }}
+      </div>
+      <div class="text-center mb-4 space-x-2 mt-4">
+        <button 
+          class="border border-black text-sm px-2 py-1 rounded-md bg-gray-100 hover:bg-gray-200 transition-all duration-300"
+          @click="startButton()">
+          スタート
+        </button>
+        <button
+        class="border border-black text-sm px-2 py-1 rounded-md bg-gray-100 hover:bg-gray-200 transition-all duration-300" 
+          @click="stopButton()">
+          ストップ
+        </button>
+        <button
+        class="border border-black text-sm px-2 py-1 rounded-md bg-gray-100 hover:bg-gray-200 transition-all duration-300" 
+          @click="resetButton()">
+          リセット
+        </button>
+      </div>
+      <div id="log" class="text-center">
+        
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
